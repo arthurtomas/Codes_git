@@ -23,3 +23,4 @@ while choose != 5:
         print('Saindo...')
     else:
         print('Você não digitou uma opção válida. Tente novamente.')
+    print('')
