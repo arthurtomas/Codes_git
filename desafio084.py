@@ -5,6 +5,8 @@ leave = 'clear'
 pesado = 0
 leve = 999
 person_pesado = person_leve =[]
+p_pesadas = []
+p_leves = []
 
 # Entrada de dados
 while True:
@@ -31,6 +33,12 @@ for person in people:
 # Saída de dados
 print('-=' * 30)
 print(f'Foras cadastradas {len(people)} pessoas.')
-print(f'O maior peso foi de {person_pesado[0]} com {person_pesado[1]} Kg')
-print(f'O menor peso foi de {person_leve[0]} com {person_leve[1]} Kg')
+for p in people:
+    if p[1] == pesado:
+        p_pesadas.append(p[0])
+print(f'O maior peso foi {pesado} Kg. Pessoas com esse peso: {p_pesadas}')
+for p in people:
+    if p[1] == leve:
+        p_leves.append(p[0])
+print(f'O menor peso foi {leve} Kg. Pessoas com esse peso: {p_leves}')
 print('-=' * 30)
