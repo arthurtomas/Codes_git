@@ -4,7 +4,7 @@ information = []
 leave = 'clear'
 pesado = 0
 leve = 999
-person_pesado = person_leve =[]
+person_pesado = person_leve = []
 p_pesadas = []
 p_leves = []
 
