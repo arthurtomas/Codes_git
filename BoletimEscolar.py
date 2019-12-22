@@ -1,5 +1,8 @@
-# Lista usada
+# Listas usadas
 boletim = []
+aprovados = []
+finais = []
+reprovados = []
 
 # Entrada de dados e verificação de saída
 while True:
@@ -22,10 +25,22 @@ for aluno in boletim:
     print(f'{boletim.index(aluno):2}. {aluno[0]:30}: {aluno[2]:4.2f} ')
 print('-=' * 30)
 
-# Impressão das notas individuais
-estudante = -1
-while estudante != 999:
-    estudante = int(input('Mostrar notas de qual aluno? (Digite 999 para sair): '))
-    if estudante != 999:
-        print(f'Notas de {boletim[estudante][0]}: {boletim[estudante][1]}')
-        print('-=' * 30)
+# Separação dos aprovados, reprovados e recuperação final
+for aluno in boletim:
+    if aluno[2] >= 7:
+        aprovados.append(aluno)
+    elif aluno[2] >= 4:
+        finais.append(aluno)
+    else:
+        reprovados.append(aluno)
+
+# Impressão dos aprovados, reprovados e finais
+print(f'\033[7;32mAprovados:\033[m')
+for aluno in aprovados:
+    print(f'{aluno[0]:25} Notas: {aluno[1]} Média: {aluno[2]:.2f}')
+print(f'\n\033[7;31mReprovados:\033[m')
+for aluno in reprovados:
+    print(f'{aluno[0]:25} Notas: {aluno[1]} Média: {aluno[2]:.2f}')
+print(f'\n\033[7;33mFinais:\033[m')
+for aluno in finais:
+    print(f'{aluno[0]:25} Notas: {aluno[1]} Média: {aluno[2]:.2f}')
